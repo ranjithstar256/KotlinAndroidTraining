@@ -17,7 +17,7 @@ fun Normalfn(name: String){
 }
 
 //passing function as parameter
-fun higherOrderFunction(functionName: (name: String)-> Unit, name: String){
+fun FunctionAsParameter(functionName: (name: String)-> Unit, name: String){
     println("In higher order function")
     println("Calling Normalfn() function...")
     functionName(name)
@@ -25,24 +25,24 @@ fun higherOrderFunction(functionName: (name: String)-> Unit, name: String){
 
 
 // function as return type
-fun higherOrderReturnFunction(): (name:String) -> Unit{
-    println("In higher order function")
+fun ReturnIsFunction(): (name:String) -> Unit{
+    println("In higherOrderReturnFunction")
     // return the Normalfn function
     return ::Normalfn
 }
 
 
 // lamda as argument
-fun higherOrderLamdaAsArgumentFunction(functionName: (name: String)->Unit, name: String){
+fun LamdaAsArgumentFunction(functionName: (name: String)->Unit, name: String){
 
-    println("In higher order function")
+    println("In higherOrderLamdaAsArgumentFunction")
     println("Calling received function...")
     functionName(name)
 }
 
 
 // lamda as return value
-fun higherOrderlamdaAsRetunFunction(): (name:String) -> Unit{
+fun LamdaAsReturnFunction(): (name:String) -> Unit{
     println("In higher order function")
     return {
             name ->
@@ -54,20 +54,20 @@ fun higherOrderlamdaAsRetunFunction(): (name:String) -> Unit{
 
 fun main() {
     //as function
-    higherOrderFunction(::Normalfn, "K P RANJITH")
+    FunctionAsParameter(::Normalfn, "K P RANJITH")
 
     //function as return type
-    val functionasreturn = higherOrderReturnFunction()
+    val functionasreturn = ReturnIsFunction()
     functionasreturn("Ranjith Kumar")
 
     // Lambda as argument
-    higherOrderLamdaAsArgumentFunction({ name: String ->
+    LamdaAsArgumentFunction({ name: String ->
         println("Inside the lambda function")
         println("Say hello to $name")
     }, "Android")
 
 
     //lamda as return type
-    val lammdaasreturn = higherOrderlamdaAsRetunFunction()
+    val lammdaasreturn = LamdaAsReturnFunction()
     lammdaasreturn("Lambda as return type")
 }
