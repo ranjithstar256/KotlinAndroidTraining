@@ -58,6 +58,7 @@ fun main() {
 
     //function as return type
     val functionasreturn = ReturnIsFunction()
+
     functionasreturn("Ranjith Kumar")
 
     // Lambda as argument
@@ -65,7 +66,6 @@ fun main() {
         println("Inside the lambda function")
         println("Say hello to $name")
     }, "Android")
-
 
     //lamda as return type
     val lammdaasreturn = LamdaAsReturnFunction()

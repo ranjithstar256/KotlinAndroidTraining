@@ -25,7 +25,7 @@ fun main() {
     val marksarr = arrayOf<Int>(10,4,5,8,9)
     //println(marksarr.get(0))
    // println(marksarr.get(1))
-    // update the value of the first element of the array
+    //update the value of the first element of the array
     marksarr.set(0,100)
    // println(marksarr.get(0))
 
